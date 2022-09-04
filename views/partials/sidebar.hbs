@@ -1,0 +1,12 @@
+<div class="col-auto col-md-3 bg-dark">
+    <div class="d-flex flex-column align-items-center text-white min-vh-100">
+            <span class="fs-2 mt-3 text-center">{{kierunek}}</span>
+            <ul class="nav nav-pills flex-column align-items-center mt-3" id="menu">
+                <div class="list-group list-group-flush lista">
+                    {{#each semestry}}
+                        {{> semestr}}
+                    {{/each}}
+                </div>
+            </ul>
+    </div>
+</div>
