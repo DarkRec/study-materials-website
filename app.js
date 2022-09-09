@@ -5,11 +5,13 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var favicon = require("serve-favicon");
 var hbs = require("hbs");
+const multer = require("multer");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var semesterRouter = require("./routes/semester");
 var subjectRouter = require("./routes/subject");
+var uploadRouter = require("./routes/upload");
 
 var app = express();
 
@@ -19,14 +21,7 @@ app.listen(PORT, function () {
 });
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
-var MongoClient = require("mongodb").MongoClient;
-var url = "mongodb://localhost:27017/mydb";
-
-MongoClient.connect(url, function (err, db) {
-    if (err) throw err;
-    console.log("Database created!");
-    db.close();
-});
+const upload = multer({ dest: "uploads/" });
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -50,8 +45,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use("/", semesterRouter);
+//app.use("/", semesterRouter);
 app.use("/", subjectRouter);
+app.use("/upload", uploadRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

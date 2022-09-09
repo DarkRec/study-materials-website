@@ -19,7 +19,8 @@
     <ul class="collapse nav flex-column" id="semestr{{incremented @index}}" data-bs-parent="#menu">
         {{#each this}}
             <li>
-                <a href="/semestr{{incremented @index}}/{{link this}}" class="nav-link"> <span class="">{{this}}</span></a>
+                <a href="{{link this}}" class="nav-link"> <span class="">{{this}}</span></a>
+                <!--/semestr{{incremented @index}}/-->
             </li>
         {{/each}}
     </ul>
