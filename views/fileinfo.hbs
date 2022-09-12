@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        {{> sidebar}}
+        <div class="col py-3">
+            <div class="bg-purple">
+                <h1>{{subject}}</h1>
+            </div>
+            {{#each file}}
+            <div class="row col-sm-10 m-5">
+                <div class="col-sm fs-3">{{info}}</div>
+                <div class="col-sm-3">
+                    <figure class="figureInfo">
+                        <img class="infoImg" src="/img/extensions/{{extension originalname}}.png">
+                        <a class="text-decoration-none" href="/download/{{location}}/{{filename}}">
+                            <img class="downloadInfoImg" src="/img/download.png">
+                        </a>
+                        <figcaption>{{originalname}}</figcaption>
+                    </figure>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

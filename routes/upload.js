@@ -26,10 +26,6 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
     //console.log(req.file);
     //console.log(req.body);
 
-    async function start() {
-        await mongo.init();
-    }
-    start();
     async function Add(coll, Listing) {
         await mongo.createListing(coll, Listing);
     }
@@ -45,11 +41,10 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
         newListing = {
             filename: File.filename,
             originalname: File.originalname,
-            mimetype: File.mimetype,
-            size: File.size,
             author: req.body.author,
             info: req.body.info,
             studentsonly: req.body.studentsOnly == "on" ? true : false,
+            location: req.body.url,
         };
 
         mongo.createColl(req.body.url);
@@ -63,12 +58,5 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
     });
     res.redirect("/" + req.body.url);
 });
-
-//router.post("/upload-multiple", upload.array("files", 5), uploadController.uploadMultiple);
-
-/*
-router.post("/", upload.none(), function (req, res, next) {
-    // req.body contains the text fields
-});*/
 
 module.exports = router;
