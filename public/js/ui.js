@@ -12,7 +12,7 @@ $(document).on("click", ".loadedIMG", function (e) {
 $(document).on("click", ".semester", function (e) {
     if (!this.classList.contains("collapsed")) {
         //req.session.open = this.href.slice(-1) - 1;
-        net.setOpen(this.href.slice(-1) - 1);
+        //net.setOpen(this.href.slice(-1) - 1);
         //console.log(this.href.slice(-1) - 1);
     }
 });

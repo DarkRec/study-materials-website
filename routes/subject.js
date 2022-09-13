@@ -7,7 +7,7 @@ var semestry = {
     "semestr 2": [
         "Algorytmy i struktury danych 1",
         "Analiza Matematyczna 2",
-        "Architektury komputerów",
+        "Architektury komputerow",
         "Fizyka 2",
         "Programowanie obiektowe",
         "Systemy operacyjne",
@@ -17,23 +17,23 @@ var semestry = {
         "Nowoczesne materiały",
         "Podstawy baz danych",
         "Projektowanie oprogramowania",
-        "Równania różniczkowe i rachunek wariacyjny",
-        "Sieci komputerowe i administracja systemów",
+        "Rownania rozniczkowe i rachunek wariacyjny",
+        "Sieci komputerowe i administracja systemow",
     ],
 };
 /*
 var semestry = [
     ["Algebra", "Analiza matematyczna 1", "Chemia", "Fizyka 1", "Podstawy informatyki", "Podstawy programowania", "Prawo patentowe"],
     ,
-    ["Algorytmy i struktury danych 1", "Analiza Matematyczna 2", "Architektury komputerów", "Fizyka 2", "Programowanie obiektowe", "Systemy operacyjne"],
+    ["Algorytmy i struktury danych 1", "Analiza Matematyczna 2", "Architektury komputerow", "Fizyka 2", "Programowanie obiektowe", "Systemy operacyjne"],
     ,
     [
         "Algorytmy i struktury danych 2",
         "Nowoczesne materiały",
         "Podstawy baz danych",
         "Projektowanie oprogramowania",
-        "Równania różniczkowe i rachunek wariacyjny",
-        "Sieci komputerowe i administracja systemów",
+        "Rownania rozniczkowe i rachunek wariacyjny",
+        "Sieci komputerowe i administracja systemow",
     ],
 ];*/
 

@@ -7,7 +7,7 @@ var semestry = {
     "semestr 2": [
         "Algorytmy i struktury danych 1",
         "Analiza Matematyczna 2",
-        "Architektury komputerów",
+        "Architektury komputerow",
         "Fizyka 2",
         "Programowanie obiektowe",
         "Systemy operacyjne",
@@ -17,8 +17,8 @@ var semestry = {
         "Nowoczesne materiały",
         "Podstawy baz danych",
         "Projektowanie oprogramowania",
-        "Równania różniczkowe i rachunek wariacyjny",
-        "Sieci komputerowe i administracja systemów",
+        "Rownania rożniczkowe i rachunek wariacyjny",
+        "Sieci komputerowe i administracja systemow",
     ],
 };
 

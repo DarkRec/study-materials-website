@@ -6,15 +6,16 @@ var cookieParser = require("cookie-parser");
 var favicon = require("serve-favicon");
 var hbs = require("hbs");
 var session = require("express-session");
+var cors = require("cors");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
-var semesterRouter = require("./routes/semester");
 var subjectRouter = require("./routes/subject");
 var uploadRouter = require("./routes/upload");
 var downloadRouter = require("./routes/download");
 var fileinfoRouter = require("./routes/fileinfo");
-var openRouter = require("./routes/open");
+//var openRouter = require("./routes/open");
+var editRouter = require("./routes/edit");
 
 var app = express();
 
@@ -23,6 +24,8 @@ app.listen(PORT, function () {
     console.log("start serwera na porcie " + PORT);
 });
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+
+app.use(cors());
 
 //app.set("trust proxy", 1); // trust first proxy
 app.use(
@@ -98,18 +101,20 @@ hbs.registerHelper("extension", function (index) {
 });
 
 //app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-//app.use("/", semesterRouter);
 app.use("/", subjectRouter);
 app.use("/upload", uploadRouter);
 app.use("/download", downloadRouter);
-app.use("/setOpen", openRouter);
+//app.use("/setOpen", openRouter);
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.use("/edit", editRouter);
 
 var subjects = [
     "/algebra",
@@ -121,7 +126,7 @@ var subjects = [
     "/prawo-patentowe",
     "/algorytmy-i-struktury-danych-1",
     "/analiza-Matematyczna-2",
-    "/architektury-komputerów",
+    "/architektury-komputerow",
     "/fizyka-2",
     "/programowanie-obiektowe",
     "/systemy-operacyjne",
@@ -129,15 +134,16 @@ var subjects = [
     "/nowoczesne-materiały",
     "/podstawy-baz-danych",
     "/projektowanie-oprogramowania",
-    "/równania-różniczkowe-i-rachunek-wariacyjny",
-    "/sieci-komputerowe-i-administracja-systemów",
+    "/rownania-rozniczkowe-i-rachunek-wariacyjny",
+    "/sieci-komputerowe-i-administracja-systemow",
 ];
 app.use(subjects, fileinfoRouter);
 
 // catch 404 and forward to error handler
+/*
 app.use(function (req, res, next) {
     next(createError(404));
-});
+});*/
 
 // error handler
 app.use(function (err, req, res, next) {

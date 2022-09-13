@@ -7,7 +7,17 @@
             </div>
             {{#each file}}
             <div class="row col-md-10 m-5">
-                <div class="col-md fs-3">{{info}}</div>
+                <div class="col-md fs-3">
+                    <form action="/edit/{{location}}/{{filename}}" method="post">
+                        <div class="upload-form">
+                            <input type="text" class="form-control" placeholder="{{originalname}}" name="filename" />
+                            <textarea class="fs-5" rows="8" cols="40" placeholder="{{info}}" name="info" ></textarea>
+                            <!--input type="hidden" value="{{originalSubject}}" name="url" /-->
+                            <input type="submit" value="Prześlij" class="btn btn-default" />
+                            <!--input type="text" class="col-md-3 fs-6" placeholder="{{author}}" name="author" /-->
+                            </div>
+                    </form-->
+                </div>
                 <div class="col-md-1 edit">
                     <a href="/edit/{{location}}/{{filename}}">
                         <img src="/img/edit.png">

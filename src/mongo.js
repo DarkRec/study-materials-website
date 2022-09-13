@@ -36,6 +36,23 @@ class MongoBot {
         console.log("Databases:");
         databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
     }
+
+    async updateFile(body, params) {
+        const db = await MongoClient.connect(this.url);
+        const dbo = db.db("IO-database");
+        var d = Date.now();
+        body.filename = body.filename.replace(/[^A-Za-z0-9\.-]/g, "-");
+        dbo.collection(params.location).updateOne(
+            { filename: params.filename },
+            { $set: { originalname: body.filename, filename: d + "-" + body.filename, info: body.info } },
+            function (err, res) {
+                if (err) throw err;
+                //console.log("1 document updated");
+                db.close();
+            }
+        );
+        //return d + "-" + body.filename;
+    }
 }
 
 module.exports = new MongoBot();

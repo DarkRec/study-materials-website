@@ -1,7 +1,6 @@
 var express = require("express");
 var router = express.Router();
 const multer = require("multer");
-const path = require("path");
 const fs = require("fs");
 const mongo = require("../src/mongo");
 
@@ -34,10 +33,6 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
         var dir = File.destination + req.body.url + "/";
         var newPath = dir + File.filename;
 
-        console.log(dir);
-        console.log(req.body.url);
-        console.log(File);
-        console.log(req.body);
         newListing = {
             filename: File.filename,
             originalname: File.originalname,
