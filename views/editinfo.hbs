@@ -10,8 +10,8 @@
                 <div class="col-md fs-3">
                     <form action="/edit/{{location}}/{{filename}}" method="post">
                         <div class="upload-form">
-                            <input type="text" class="form-control" placeholder="{{originalname}}" name="filename" />
-                            <textarea class="fs-5" rows="8" cols="40" placeholder="{{info}}" name="info" ></textarea>
+                            <input type="text" class="form-control" placeholder="{{originalname}}" name="filename" autocomplete="off"/>
+                            <textarea class="fs-5" rows="8" cols="40" placeholder="{{info}}" name="info" autocomplete="off"></textarea>
                             <!--input type="hidden" value="{{originalSubject}}" name="url" /-->
                             <input type="submit" value="Prześlij" class="btn btn-default" />
                             <!--input type="text" class="col-md-3 fs-6" placeholder="{{author}}" name="author" /-->

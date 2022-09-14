@@ -79,6 +79,7 @@ hbs.registerHelper("extension", function (index) {
         "mov",
         "mp3",
         "png",
+        "PNG",
         "pptx",
         "psd",
         "py",

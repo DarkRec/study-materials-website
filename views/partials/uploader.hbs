@@ -1,10 +1,10 @@
 <form action="/upload" enctype="multipart/form-data" method="post">
     <div class="upload-form">
         <input type="file" class="form-control-file m-3" multiple name="mutli-files" />
-        <input type="text" class="form-control" placeholder="Opis" name="info" />
+        <input type="text" class="form-control" placeholder="Opis" name="info" autocomplete="off" />
         <input type="hidden" value="{{originalSubject}}" name="url" />
         <input type="submit" value="Prześlij" class="btn btn-default" />
-        <input type="text" class="col-md-3" placeholder="Autor" name="author" />
+        <input type="text" class="col-md-3" placeholder="Autor" name="author" autocomplete="off" />
         <label class="mx-3" for="studentsOnly">Dla Studentów</label><input type="checkbox" checked name="studentsOnly" />
     </div>
 </form>
