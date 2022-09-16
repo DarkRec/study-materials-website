@@ -1,0 +1,23 @@
+gcc -c -o gcd_static.o gcd_static.s
+gcc -c -o print_rsp_static.o print_rsp_static.s
+
+ar rcs libstat.a gcd_static.o print_rsp_static.o
+
+gcc -no-pie -o lab_7_static lab_7.c -L. -lstat
+
+objdump -D lab_7_static > lab_7_static.txt
+
+gcc -static -no-pie -o lab_7_full_static lab_7.c -L. -lstat
+
+objdump -D lab_7_full_static > lab_7_full_static.txt
+
+
+
+gcc -fPIC -c -o gcd_dynamic.o gcd_dynamic.s
+gcc -fPIC -c -o print_rsp_dynamic.o print_rsp_dynamic.s
+
+gcc -shared -o libdyn.so gcd_dynamic.o print_rsp_dynamic.o
+
+gcc -fPIC -o lab_7_dynamic lab_7.c -L. -ldyn
+
+objdump -D lab_7_dynamic > lab_7_dynamic.txt

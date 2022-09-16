@@ -14,8 +14,8 @@ var subjectRouter = require("./routes/subject");
 var uploadRouter = require("./routes/upload");
 var downloadRouter = require("./routes/download");
 var fileinfoRouter = require("./routes/fileinfo");
-//var openRouter = require("./routes/open");
 var editRouter = require("./routes/edit");
+var newdirRouter = require("./routes/newdir");
 
 var app = express();
 
@@ -61,6 +61,12 @@ hbs.registerHelper("link", function (index) {
     index = index.replace(/\s/g, "-");
     return index;
 });
+hbs.registerHelper("isdefined", function (value) {
+    return value !== undefined;
+});
+hbs.registerHelper("opis", function (value) {
+    return value.replace(/-/g, " ");
+});
 hbs.registerHelper("extension", function (index) {
     icons = [
         "accdb",
@@ -70,6 +76,7 @@ hbs.registerHelper("extension", function (index) {
         "cs",
         "css",
         "doc",
+        "docx",
         "exe",
         "gif",
         "html",
@@ -110,7 +117,6 @@ app.use("/users", usersRouter);
 app.use("/", subjectRouter);
 app.use("/upload", uploadRouter);
 app.use("/download", downloadRouter);
-//app.use("/setOpen", openRouter);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -139,6 +145,8 @@ var subjects = [
     "/sieci-komputerowe-i-administracja-systemow",
 ];
 app.use(subjects, fileinfoRouter);
+
+app.use("/newdir", newdirRouter);
 
 // catch 404 and forward to error handler
 /*

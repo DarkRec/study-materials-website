@@ -6,9 +6,13 @@
                 <h1>{{subject}}</h1>
             </div>
             {{> uploader}}
-            <div id="collection-content">
+            <div class="mt-5" id="collection-content">
                 {{#each collection}}
+                    {{#if (isdefined info)}}
                     {{> loadedfile}}
+                    {{else}}
+                    {{> loaddir}}
+                    {{/if}}
                 {{/each}}
             </div>
         </div>

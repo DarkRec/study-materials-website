@@ -16,18 +16,6 @@ class Net {
         });
     }
 
-    download(fileName, subject) {
-        $.ajax({
-            url: "/download",
-            data: { name: fileName, subject: subject },
-            type: "POST",
-            success: function (data) {},
-            error: function (xhr, status, error) {
-                console.log(xhr);
-            },
-        });
-    }
-
     setOpen(nr) {
         $.ajax({
             url: "/setOpen",

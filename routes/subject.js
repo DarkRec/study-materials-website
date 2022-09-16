@@ -56,9 +56,10 @@ router.get("/:sub", function (req, res, next) {
         if (el == subject) subCheck = true;
     });
 
-    async function doIt() {
+    async function Subject() {
         try {
             const respond = await mongo.listCollection(req.params.sub);
+            respond.sort((a, b) => (a.originalname > b.originalname ? 1 : b.originalname > a.originalname ? -1 : 0));
             res.render("subjectsubpage", {
                 originalSubject: req.params.sub,
                 subject: subject,
@@ -71,7 +72,7 @@ router.get("/:sub", function (req, res, next) {
         }
     }
 
-    doIt();
+    Subject();
 });
 
 module.exports = router;

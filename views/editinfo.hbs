@@ -9,11 +9,12 @@
             <div class="row col-md-10 m-5">
                 <div class="col-md fs-3">
                     <form action="/edit/{{location}}/{{filename}}" method="post">
-                        <div class="upload-form">
-                            <input type="text" class="form-control" placeholder="{{originalname}}" name="filename" autocomplete="off"/>
-                            <textarea class="fs-5" rows="8" cols="40" placeholder="{{info}}" name="info" autocomplete="off"></textarea>
-                            <!--input type="hidden" value="{{originalSubject}}" name="url" /-->
-                            <input type="submit" value="Prześlij" class="btn btn-default" />
+                        <div class="upload-form col-md-10">
+                            <input type="text" class="form-control mb-3" placeholder="{{originalname}}" name="filename" autocomplete="off"/>
+                            <textarea class="form-control mb-3" rows="6" aria-label="With textarea"  placeholder="{{info}}" name="info" autocomplete="off"></textarea>
+                            <!--rows="8" cols="40" -->
+                            <input type="hidden" value="{{originalname}}" name="prevName" />
+                            <input type="submit" value="Prześlij" class="btn btn-outline-primary" />
                             <!--input type="text" class="col-md-3 fs-6" placeholder="{{author}}" name="author" /-->
                             </div>
                     </form-->

@@ -9,22 +9,16 @@ const storage = multer.diskStorage({
         cb(null, "uploads/");
     },
     filename: function (req, file, cb) {
-        console.log(file);
         var d = Date.now();
-        file.originalname;
-        file.originalname = file.originalname.replace(/[^A-Za-z0-9\.-]/g, "-");
+        //file.originalname = file.originalname.replace(/[^A-Za-z0-9\.-]/g, "-");
         cb(null, d + "-" + file.originalname);
     },
 });
 const upload = multer({ storage: storage });
 
 router.post("/", upload.array("mutli-files"), function (req, res) {
-    // req.file is the name of your file in the form above, here 'uploaded_file'
-    // req.body will hold the text fields, if there were any
-
-    //console.log(req.file);
-    //console.log(req.body);
-
+    console.log(req.body);
+    console.log(req.files);
     async function Add(coll, Listing) {
         await mongo.createListing(coll, Listing);
     }
@@ -32,7 +26,7 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
         var oldPath = File.path;
         var dir = File.destination + req.body.url + "/";
         var newPath = dir + File.filename;
-
+        if (!req.body.author) req.body.author = "guest";
         newListing = {
             filename: File.filename,
             originalname: File.originalname,
@@ -42,13 +36,11 @@ router.post("/", upload.array("mutli-files"), function (req, res) {
             location: req.body.url,
         };
 
-        mongo.createColl(req.body.url);
-
-        Add(req.body.url, newListing);
+        Add(req.body.url.split("/")[0], newListing);
         if (!fs.existsSync(dir)) fs.mkdirSync(dir);
         fs.rename(oldPath, newPath, function (err) {
             if (err) throw err;
-            console.log("new dir: " + dir);
+            //console.log("new dir: " + dir);
         });
     });
     res.redirect("/" + req.body.url);

@@ -1,10 +1,18 @@
-<form action="/upload" enctype="multipart/form-data" method="post">
-    <div class="upload-form">
-        <input type="file" class="form-control-file m-3" multiple name="mutli-files" />
-        <input type="text" class="form-control" placeholder="Opis" name="info" autocomplete="off" />
+<div class="upload-form row">
+    <form action="/upload" enctype="multipart/form-data" method="post" class="col-lg-6 col-md-6 my-2">
+        <!--input type="file" class="form-control-file m-3" multiple name="mutli-files" /-->
         <input type="hidden" value="{{originalSubject}}" name="url" />
-        <input type="submit" value="Prześlij" class="btn btn-default" />
-        <input type="text" class="col-md-3" placeholder="Autor" name="author" autocomplete="off" />
-        <label class="mx-3" for="studentsOnly">Dla Studentów</label><input type="checkbox" checked name="studentsOnly" />
-    </div>
-</form>
+        <input type="file" class="form-control mb-3" name="mutli-files"  multiple>
+        <textarea class="form-control mb-3" rows="1" aria-label="With textarea" placeholder="Opis" name="info" autocomplete="off"></textarea>
+        <input type="submit" value="Prześlij" class="btn btn-outline-primary" />
+        <input type="checkbox" class="form-check-input mx-5 mt-2" style="height:24px;width:24px" checked name="studentsOnly" />
+    </form>
+    <form action="/newdir" method="post" class="col-xxl-3 col-xl-4 col-lg-5 col-sm-6">
+        <div class="mb-1">
+            <img src="/img/addfolder.png" style="height:64px;">
+            <input type="hidden" value="{{originalSubject}}" name="url" />
+            <input type="submit" value="Nowy Folder" class="btn btn-outline-primary mx-md-4" />
+        </div>
+        <input type="text" class="form-control" style="width:240px;" placeholder="nowy folder" name="folder" autocomplete="off"/>
+    </form>
+</div>

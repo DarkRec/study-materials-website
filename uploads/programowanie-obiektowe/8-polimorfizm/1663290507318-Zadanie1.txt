@@ -1,0 +1,20 @@
+Zadanie 1 Stwórz mapę myśli dotyczącą zagadnienia polimorfizmu.
+Omówienie zagadnienia polimorfizmu znajdziesz m.in tutaj:
+
+    https://www.p-programowanie.pl/cpp/polimorfizm-metody-wirtualne
+
+    lub w książkach np. Jerzego Grębosza z cyklu Opus Magnum C++ https://www.empik.com/opus-magnum-c-11-programowanie-w-jezyku-c-wydanie-ii-poprawione-komplet-grebosz-jerzy,p1261420493,ebooki-i-mp3-p
+
+Informacje o mapie myśli znajdziesz m.in. tutaj:
+
+    https://www.umcs.pl/pl/baza-wiedzy,19255,najlepszy-sposob-na-notatki-mapy-mysli,90019.chtm
+    https://pl.wikipedia.org/wiki/Mapa_my%C5%9Bli
+
+
+    https://pl.wikipedia.org/wiki/Tony_Buzan
+
+Do rysowania mapy myśli możesz wykorzystać np.:
+
+    kartkę papieru lub
+    https://www.canva.com/pl_pl/wykresy/mapy-mysli/ lub
+    https://www.mindmeister.com/?utm_source=google&utm_medium=cpc&utm_campaign=World_en_search&utm_content=homepage&utm_term=canva%20mind%20mapping&utm_campaign=World_en&utm_source=adwords&utm_medium=ppc&hsa_acc=1500715290&hsa_cam=1566647507&hsa_grp=64812294452&hsa_ad=442527591571&hsa_src=g&hsa_tgt=aud-628904987020:kwd-658696736545&hsa_kw=canva%20mind%20mapping&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwg_iTBhDrARIsAD3Ib5h4v3MWwvXS_-GRMnIYrGwcZaz-JLZ91xNBqFGVPEiJgcccWMyWTc8aAllkEALw_wcB

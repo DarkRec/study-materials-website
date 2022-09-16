@@ -1,4 +1,5 @@
 const MongoClient = require("mongodb").MongoClient;
+var fs = require("fs");
 
 class MongoBot {
     constructor() {
@@ -18,14 +19,17 @@ class MongoBot {
     async listCollection(coll) {
         const db = await MongoClient.connect(this.url);
         const dbo = db.db("IO-database");
-        const result = await dbo.collection(coll).find({}).toArray();
+        const result = await dbo.collection(coll).find({ location: coll }).toArray();
         return result;
     }
 
-    async findFile(coll, name) {
+    async findFile(coll, name, location) {
+        var dir;
+        if (coll == location) dir = coll;
+        else dir = coll + "/" + location;
         const db = await MongoClient.connect(this.url);
         const dbo = db.db("IO-database");
-        const result = await dbo.collection(coll).find({ filename: name }).toArray();
+        const result = await dbo.collection(coll).find({ filename: name, location: dir }).toArray();
         return result;
     }
 
@@ -37,21 +41,47 @@ class MongoBot {
         databasesList.databases.forEach((db) => console.log(` - ${db.name}`));
     }
 
-    async updateFile(body, params) {
+    async updateFile(coll, body, params) {
+        console.log(coll);
+        console.log(body);
+        console.log(params);
         const db = await MongoClient.connect(this.url);
         const dbo = db.db("IO-database");
         var d = Date.now();
         body.filename = body.filename.replace(/[^A-Za-z0-9\.-]/g, "-");
-        dbo.collection(params.location).updateOne(
-            { filename: params.filename },
-            { $set: { originalname: body.filename, filename: d + "-" + body.filename, info: body.info } },
-            function (err, res) {
+        var upload;
+        if (body.filename == "" && body.info != "") upload = { info: body.info };
+        else if (body.filename != "" && body.info == "") {
+            if (body.filename.split(".").length == 1) body.filename = body.filename + "." + body.prevName.split(".")[body.prevName.split(".").length - 1];
+            upload = { originalname: body.filename, filename: d + "-" + body.filename };
+        } else if (body.filename != "" && body.info != "") {
+            if (body.filename.split(".").length == 1) body.filename = body.filename + "." + body.prevName.split(".")[body.prevName.split(".").length - 1];
+            upload = { originalname: body.filename, filename: d + "-" + body.filename, info: body.info };
+        }
+        if (upload) {
+            dbo.collection(coll).updateOne({ filename: params.filename }, { $set: upload }, function (err, res) {
                 if (err) throw err;
-                //console.log("1 document updated");
                 db.close();
-            }
-        );
-        //return d + "-" + body.filename;
+            });
+            fs.rename(
+                __dirname + "/../uploads/" + params.location + "/" + params.filename,
+                __dirname + "/../uploads/" + params.location + "/" + upload.filename,
+                function (err) {
+                    if (err) console.log("ERROR: " + err);
+                }
+            );
+        }
+    }
+    async findDir(coll, dir, location) {
+        if (coll == dir) fullDir = dir + "/" + location;
+        else fullDir = coll + "/" + dir + "/" + location;
+
+        //console.log(coll, dir, location);
+        const db = await MongoClient.connect(this.url);
+        const dbo = db.db("IO-database");
+        const result = await dbo.collection(coll).find({ location: fullDir }).toArray();
+        //console.log(result);
+        return result;
     }
 }
 

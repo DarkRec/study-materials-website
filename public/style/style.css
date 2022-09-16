@@ -27,7 +27,7 @@ a {
 
 figure {
   position: relative;
-  height: 80px;
+  height: 100px;
   margin: 0 8px;
   display: inline-block;
   cursor: pointer;
@@ -35,9 +35,12 @@ figure {
 
 figcaption {
   max-width: 80px;
-  height: 40px;
+  height: 36px;
   text-align: center;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
 }
 
 .downloadImg {
@@ -76,4 +79,25 @@ figcaption {
 
 .edit img {
   height: 64px;
+}
+
+.Test{
+  min-height: 36px;
+  width: 150px;
+  margin:0;
+  position: absolute;
+  left:0px;
+  top:0px;
+  background-color: white;
+  text-align: center;
+  outline: 1px solid black;
+  border-radius:0.25em;
+  padding: 0 5px 10px 5px;
+  overflow-wrap: break-word;
+  display: none;
+  cursor: pointer;
+}
+
+a{
+  outline: none;
 }
