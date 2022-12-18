@@ -1,0 +1,25 @@
+AUSTRALIA
+
+
+
+You've entered a domain name. We've found an IP address from the domain name you've entered. Your translated IP address is 13.35.125.55
+
+Geolocation data from IP2Location (Product: DB6, updated on 2022-11-1)
+Domain Name: www.australia.gov.au
+Country: United States
+Region: California
+City: San Francisco
+ISP: Amazon.com Inc.
+Organization: Not available
+Latitude: 37.7749
+Longitude: -122.4194
+
+Geolocation data from ipinfo.io (Product: API, real-time)
+Domain Name: www.australia.gov.au
+Country: United States
+Region: California
+City: San Francisco
+ISP: Amazon.com, Inc.
+Organization: Amazon.com, Inc. (amazon.com)
+Latitude: 37.7749
+Longitude: -122.4194

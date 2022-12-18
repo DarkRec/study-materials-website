@@ -1,6 +1,6 @@
 class Ui {
     constructor() {
-        console.log("konstruktor klasy Ui");
+        //console.log("konstruktor klasy Ui");
     }
 }
 

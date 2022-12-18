@@ -1,9 +1,11 @@
 var express = require("express");
 var router = express.Router();
 const fs = require("fs");
-const mongo = require("../src/mongo");
+const postgres = require("../src/postgres");
+const log = require("../src/logs");
 
 router.post("/", function (req, res, next) {
+    //console.log('newdir')
     if (req.body.folder != "") {
     }
 
@@ -13,7 +15,8 @@ router.post("/", function (req, res, next) {
     let result = req.body.folder.toLocaleLowerCase();
 
     for (let i = 0; i < letters.length; ++i) {
-        result = result.replaceAll(letters[i], replacement[i]);
+        //result = result.replaceAll(letters[i], replacement[i]);
+        result = result.split(letters[i]).join(replacement[i]);
     }
     result = result.replace(/\s/g, "-");
 
@@ -23,16 +26,17 @@ router.post("/", function (req, res, next) {
     };
 
     async function NewDir() {
+
         try {
-            const respond = await mongo.createListing(req.body.url.split("/")[0], newListing);
+            await postgres.createDir(req.body.url.split("/")[0], newListing);
         } catch (error) {
-            console.log(error);
+            log.Error("newdir.newDir\n" + error)
         }
     }
-    if (!fs.existsSync("uploads/" + req.body.url.split("/")[0])) {
-        fs.mkdirSync("uploads/" + req.body.url.split("/")[0]);
+    if (!fs.existsSync("public/uploads/" + req.body.url.split("/")[0])) {
+        fs.mkdirSync("public/uploads/" + req.body.url.split("/")[0]);
     }
-    var dir = "uploads/" + req.body.url + "/" + result + "/";
+    var dir = "public/uploads/" + req.body.url + "/" + result + "/";
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir);
         NewDir();

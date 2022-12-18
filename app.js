@@ -16,10 +16,10 @@ var downloadRouter = require("./routes/download");
 var fileinfoRouter = require("./routes/fileinfo");
 var editRouter = require("./routes/edit");
 var newdirRouter = require("./routes/newdir");
-
 var app = express();
 
-const PORT = 1000;
+const PORT = process.env.PORT || 1000;
+
 app.listen(PORT, function () {
     console.log("start serwera na porcie " + PORT);
 });
@@ -39,14 +39,6 @@ app.use(
         },
     })
 );
-/*app.use(
-    session({
-        secret: "cookie_secret",
-        resave: true,
-        saveUninitialized: true,
-    })
-);*/
-//app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -62,7 +54,7 @@ hbs.registerHelper("link", function (index) {
     return index;
 });
 hbs.registerHelper("isdefined", function (value) {
-    return value !== undefined;
+    return value == 'file';
 });
 hbs.registerHelper("opis", function (value) {
     return value.replace(/-/g, " ");
@@ -86,7 +78,6 @@ hbs.registerHelper("extension", function (index) {
         "mov",
         "mp3",
         "png",
-        "PNG",
         "pptx",
         "psd",
         "py",
@@ -94,6 +85,7 @@ hbs.registerHelper("extension", function (index) {
         "sql",
         "svg",
         "txt",
+        "vpp",
         "xls",
         "xml",
         "pdf",
@@ -101,6 +93,7 @@ hbs.registerHelper("extension", function (index) {
     ];
     index = index.split(".")[index.split(".").length - 1];
     var ext;
+    index = index.toLowerCase();
     icons.forEach((element) => {
         if (element == index) ext = index;
     });
@@ -108,7 +101,6 @@ hbs.registerHelper("extension", function (index) {
     return "other";
 });
 
-//app.use(logger("dev"));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -138,11 +130,12 @@ var subjects = [
     "/programowanie-obiektowe",
     "/systemy-operacyjne",
     "/algorytmy-i-struktury-danych-2",
-    "/nowoczesne-materiały",
+    "/nowoczesne-materialy",
     "/podstawy-baz-danych",
     "/projektowanie-oprogramowania",
     "/rownania-rozniczkowe-i-rachunek-wariacyjny",
     "/sieci-komputerowe-i-administracja-systemow",
+    "/pliki"
 ];
 app.use(subjects, fileinfoRouter);
 

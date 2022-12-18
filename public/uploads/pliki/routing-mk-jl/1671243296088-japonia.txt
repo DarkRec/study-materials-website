@@ -1,0 +1,66 @@
+JAPAN
+
+You've entered a domain name. We've found an IP address from the domain name you've entered. Your translated IP address is 99.84.238.216
+
+Geolocation data from IP2Location (Product: DB6, updated on 2022-11-1)
+Domain Name: www.japan.go.jp
+Country: United States
+Region: California
+City: San Francisco
+ISP: Amazon.com Inc.
+Organization: Not available
+Latitude: 37.7749
+Longitude: -122.4194
+
+Geolocation data from ipinfo.io (Product: API, real-time)
+Domain Name: www.japan.go.jp
+Country: United States
+Region: California
+City: Oakland
+ISP: Amazon.com, Inc.
+Organization: Amazon.com, Inc. (amazon.com)
+Latitude: 37.8044
+Longitude: -122.2708
+
+
+C:\Users\makkubi2>ping japan.go.jp
+
+Pinging japan.go.jp [18.66.233.98] with 32 bytes of data:
+Reply from 18.66.233.98: bytes=32 time=15ms TTL=245
+Reply from 18.66.233.98: bytes=32 time=16ms TTL=245
+Reply from 18.66.233.98: bytes=32 time=15ms TTL=245
+Reply from 18.66.233.98: bytes=32 time=17ms TTL=245
+
+Ping statistics for 18.66.233.98:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 15ms, Maximum = 17ms, Average = 15ms
+
+C:\Users\makkubi2>pintracert japan.go.jp
+'pintracert' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\makkubi2>tracert japan.go.jp
+
+Tracing route to japan.go.jp [18.66.233.98]
+over a maximum of 30 hops:
+
+  1    <1 ms     *       18 ms  krywan [192.168.102.1]
+  2     *        *        *     Request timed out.
+  3    <1 ms    <1 ms    <1 ms  b6rtr.agh.edu.pl [149.156.112.125]
+  4    <1 ms    <1 ms    <1 ms  fg-agh.agh.edu.pl [149.156.193.151]
+  5     1 ms     1 ms    <1 ms  149.156.6.222
+  6    <1 ms    <1 ms    <1 ms  149.156.0.217
+  7     9 ms     9 ms     9 ms  z-krakowa.poznan-gw3.10gb.rtr.pionier.gov.pl [212.191.224.69]
+  8    62 ms    66 ms    62 ms  ae100.edge3.berlin1.level3.net [212.162.10.81]
+  9    70 ms    66 ms    66 ms  ae-4-4.edge3.Warsaw1.Level3.net [4.69.167.217]
+ 10    15 ms    15 ms    15 ms  99.83.68.202
+ 11     *        *        *     Request timed out.
+ 12     *        *        *     Request timed out.
+ 13     *        *        *     Request timed out.
+ 14     *        *        *     Request timed out.
+ 15     *        *        *     Request timed out.
+ 16    16 ms    15 ms    17 ms  15.230.19.18
+ 17    16 ms    17 ms    16 ms  server-18-66-233-98.waw51.r.cloudfront.net [18.66.233.98]
+
+Trace complete.

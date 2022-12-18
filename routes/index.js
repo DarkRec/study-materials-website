@@ -1,28 +1,13 @@
 var express = require("express");
 var router = express.Router();
+const semestry = require("./subjectList");
 
-var semestry = {
-    "semestr 1": ["Algebra", "Analiza matematyczna 1", "Chemia", "Fizyka 1", "Podstawy informatyki", "Podstawy programowania", "Prawo patentowe"],
-    "semestr 2": [
-        "Algorytmy i struktury danych 1",
-        "Analiza Matematyczna 2",
-        "Architektury komputerow",
-        "Fizyka 2",
-        "Programowanie obiektowe",
-        "Systemy operacyjne",
-    ],
-    "semestr 3": [
-        "Algorytmy i struktury danych 2",
-        "Nowoczesne materiały",
-        "Podstawy baz danych",
-        "Projektowanie oprogramowania",
-        "Rownania rozniczkowe i rachunek wariacyjny",
-        "Sieci komputerowe i administracja systemow",
-    ],
-};
+var counter = 0;
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
+    //counter++;
+    //console.log(counter,":", req.socket.remoteAddress.split(":").slice(-1)[0])
     /*
     if (req.session.open != undefined) {
     } else {

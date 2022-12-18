@@ -1,0 +1,23 @@
+USA
+
+You've entered a domain name. We've found an IP address from the domain name you've entered. Your translated IP address is 23.216.149.197
+
+Geolocation data from IP2Location (Product: DB6, updated on 2022-11-1)
+Domain Name: www.state.gov
+Country: United States
+Region: California
+City: Santa Clara
+ISP: Akamai Technologies Inc.
+Organization: Not available
+Latitude: 37.3541
+Longitude: -121.9552
+
+Geolocation data from ipinfo.io (Product: API, real-time)
+Domain Name: www.state.gov
+Country: United States
+Region: California
+City: Santa Clara
+ISP: Akamai International B.V.
+Organization: Akamai Technologies, Inc. (akamai.com)
+Latitude: 37.3541
+Longitude: -121.9552

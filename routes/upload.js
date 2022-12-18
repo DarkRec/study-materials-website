@@ -2,11 +2,12 @@ var express = require("express");
 var router = express.Router();
 const multer = require("multer");
 const fs = require("fs");
-const mongo = require("../src/mongo");
+const postgres = require("../src/postgres");
+//const mongo = require("../src/mongo");
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, "uploads/");
+        cb(null, "public/uploads/");
     },
     filename: function (req, file, cb) {
         var d = Date.now();
@@ -17,10 +18,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.post("/", upload.array("mutli-files"), function (req, res) {
-    console.log(req.body);
-    console.log(req.files);
     async function Add(coll, Listing) {
-        await mongo.createListing(coll, Listing);
+        await postgres.createListing(coll, Listing);
     }
     req.files.forEach((File) => {
         var oldPath = File.path;

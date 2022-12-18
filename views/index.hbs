@@ -1,11 +1,24 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
+<div class="container-fluid overflow-hidden">
+    <div class="row vh-100 overflow-auto">
         {{> sidebar}}
-        <div class="col py-3">
-            <div class="bg-purple">
-                <h1>{{title}}</h1>
-                <p>Welcome to {{title}}</p>
-            </div>
+        <div class="col d-flex flex-column h-md-100">
+            <main class="row overflow-auto pt-3 px-2">
+                <div class="d-none d-lg-block d-xl-none">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23a3b7c9&ctz=Europe%2FWarsaw&showTz=0&showTabs=1&showPrint=0&showDate=1&showTitle=0&src=a3VibGl0MDJAZ21haWwuY29t&src=MDhiMmI2Yzg1ZTk4YzAzYzhlOGJhZmZiNDdjNWFkMDMzOWZkOGE5MTU4ODgzOWU5NDBmNmI3ZjZjYjkwOTgzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23F4511E" style="border-width:0" width="700" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="d-none d-xl-block d-xxl-none">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23a3b7c9&ctz=Europe%2FWarsaw&showTz=0&showTabs=1&showPrint=0&showDate=1&showTitle=0&src=a3VibGl0MDJAZ21haWwuY29t&src=MDhiMmI2Yzg1ZTk4YzAzYzhlOGJhZmZiNDdjNWFkMDMzOWZkOGE5MTU4ODgzOWU5NDBmNmI3ZjZjYjkwOTgzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23F4511E" style="border-width:0" width="900" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="d-none d-xxl-block">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23a3b7c9&ctz=Europe%2FWarsaw&showTz=0&showTabs=1&showPrint=0&showDate=1&showTitle=0&src=a3VibGl0MDJAZ21haWwuY29t&src=MDhiMmI2Yzg1ZTk4YzAzYzhlOGJhZmZiNDdjNWFkMDMzOWZkOGE5MTU4ODgzOWU5NDBmNmI3ZjZjYjkwOTgzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23F4511E" style="border-width:0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+                <div class="d-block d-lg-none">
+                    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23a3b7c9&ctz=Europe%2FWarsaw&showTz=0&showTabs=0&showPrint=0&showDate=1&showTitle=0&showCalendars=0&src=a3VibGl0MDJAZ21haWwuY29t&src=MDhiMmI2Yzg1ZTk4YzAzYzhlOGJhZmZiNDdjNWFkMDMzOWZkOGE5MTU4ODgzOWU5NDBmNmI3ZjZjYjkwOTgzYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%237986CB&color=%23F4511E" style="border-width:0" height="600" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </main>
+            <!--footer class="row bg-light py-4 mt-auto">
+                <div class="col"> Footer content here... </div>
+            </footer-->
         </div>
     </div>
 </div>

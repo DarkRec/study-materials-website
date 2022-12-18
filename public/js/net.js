@@ -1,7 +1,7 @@
 //console.log("wczytano plik Net.js")
 class Net {
     constructor() {
-        console.log("konstruktor klasy Net");
+        //console.log("konstruktor klasy Net");
     }
 
     template() {

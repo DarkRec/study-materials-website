@@ -1,9 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-.bg-purple {
-  background: blueviolet;
+  background-color: #a3b7c9;
 }
 
 a {
@@ -54,15 +51,16 @@ figcaption {
 .infoImg {
   position: relative;
   height: 256px;
+  padding-bottom: 10px;
 }
 
 .figureInfo {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   border-radius: 10px;
-  padding-top: 15px;
+  padding: 15px 5px 50px 5px;
   position: relative;
   height: 300px;
-  background-color: #0D69D2;
+  /*background-color: #0D69D2;*/
 }
 
 .figureinfo figcaption {
@@ -81,23 +79,58 @@ figcaption {
   height: 64px;
 }
 
-.Test{
+.Test {
   min-height: 36px;
   width: 150px;
-  margin:0;
+  margin: 0;
   position: absolute;
-  left:0px;
-  top:0px;
+  left: 0px;
+  top: 0px;
   background-color: white;
   text-align: center;
   outline: 1px solid black;
-  border-radius:0.25em;
+  border-radius: 0.25em;
   padding: 0 5px 10px 5px;
   overflow-wrap: break-word;
   display: none;
   cursor: pointer;
 }
 
-a{
+a {
   outline: none;
+}
+
+.disabled,
+.disabled:hover,
+.disabled:visited {
+  cursor: default;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+
+.start {
+  background: url('/img/iceland.jpg');
+  background-size: 100%;
+}
+
+.bgStars {
+  background: url('/img/stars.jpg');
+  background-size: 100%;
+}
+
+.darkBG {
+  background-color: #a3b7c9;
+}
+
+.btn {
+  background-color: white;
+}
+
+div.subscribe-image {
+  display: none;
+}
+
+#menu {
+  margin: auto;
 }

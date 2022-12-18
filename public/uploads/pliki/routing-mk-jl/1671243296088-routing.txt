@@ -1,0 +1,6 @@
+Ameryka Płn - USA		https://www.state.gov/		23.216.149.197		time = 230ms 	TTL=50
+Ameryka Pd - Brazylia		https://www.gov.br/pt-br	161.148.164.31		timed out	
+Afryka - Etiopia		https://pmo.gov.et/		196.189.148.34		timed out
+Europa - Francja		https://france-visas.gouv.fr/	143.196.252.80		timed out
+Azja - Japonia			https://www.japan.go.jp/	18.66.15.117		time=25ms	TTL=244
+Australia - Australia		https://www.australia.gov.au/	52.84.106.92		time = 28ms	TTL=240	

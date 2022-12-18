@@ -1,6 +1,6 @@
 // start całości projektu, utworzenie obiektów poszczególnych klas
 
-console.log("wczytano plik Main.js");
+//console.log("wczytano plik main.js");
 
 var net;
 var ui;

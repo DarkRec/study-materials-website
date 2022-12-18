@@ -1,0 +1,23 @@
+BRAZIL
+
+You've entered a domain name. We've found an IP address from the domain name you've entered. Your translated IP address is 161.148.164.31
+
+Geolocation data from IP2Location (Product: DB6, updated on 2022-11-1)
+Domain Name: www.gov.br
+Country: Brazil
+Region: Distrito Federal
+City: Brasilia
+ISP: Servico Federal de Processamento de Dados - Serpro
+Organization: Not available
+Latitude: -15.7797
+Longitude: -47.9297
+
+Geolocation data from ipinfo.io (Product: API, real-time)
+Domain Name: www.gov.br
+Country: Brazil
+Region: Federal District
+City: Brasília
+ISP: SERVICO FEDERAL DE PROCESSAMENTO DE DADOS - SERPRO
+Organization: SERVICO FEDERAL DE PROCESSAMENTO DE DADOS - SERPRO (serpro.gov.br)
+Latitude: -15.7797
+Longitude: -47.9297

@@ -1,20 +1,22 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
+<div class="container-fluid overflow-hidden">
+    <div class="row vh-100 overflow-auto">
         {{> sidebar}}
-        <div class="col py-3">
-            <div class="bg-purple">
-                <h1>{{subject}}</h1>
-            </div>
-            {{> uploader}}
-            <div class="mt-5" id="collection-content">
-                {{#each collection}}
-                    {{#if (isdefined info)}}
+        <div class="col d-flex flex-column h-md-100">
+            <main class="row overflow-auto">
+                <div class="bg-purple">
+                    <h1>{{subject}}</h1>
+                </div>
+                {{> uploader}}
+                <div class="mt-5" id="collection-content">
+                    {{#each collection}}
+                    {{#if (isdefined type)}}
                     {{> loadedfile}}
                     {{else}}
                     {{> loaddir}}
                     {{/if}}
-                {{/each}}
-            </div>
+                    {{/each}}
+                </div>
+            </main>
         </div>
     </div>
 </div>

@@ -1,29 +1,35 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
+<div class="container-fluid overflow-hidden">
+    <div class="row vh-100 overflow-auto">
         {{> sidebar}}
-        <div class="col py-3">
-            <div class="bg-purple">
-                <h1>{{subject}}</h1>
-            </div>
-            {{#each file}}
-            <div class="row col-md-10 m-5">
-                <div class="col-md fs-3">{{info}}</div>
-                <div class="col-md-1 edit">
-                    <a href="/edit/{{location}}/{{filename}}">
+        <div class="col d-flex flex-column h-md-100">
+            <main class="row overflow-auto">
+                <div class="bg-purple">
+                    <h1>{{subject}}</h1>
+                </div>
+                <div class="row col-md-10 m-5">
+                    <div class="col-md fs-3"></div>
+                    <div class="col-md-1 edit">
+                        <!--a href="/edit/{{file.location}}/{{file.filename}}">
                         <img src="/img/edit.png">
-                    </a>
+                    </a-->
+                    </div>
+                    <div class="col-md-4">
+                        <figure class="figureInfo">
+                            <img class="infoImg" src="/img/extensions/{{extension file.originalname}}.png">
+                            <a class="text-decoration-none" href="/download/{{file.location}}/{{file.filename}}">
+                                <img class="downloadInfoImg" src="/img/download.png">
+                            </a>
+                            <figcaption>{{file.originalname}}</figcaption>
+                        </figure>
+                    </div>
+                    {{#if img}}
+                    <img src="/uploads/{{file.location}}/{{file.filename}}" alt="">
+                    {{/if}}
+                    <div>
+                        <pre>{{text}}</pre>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <figure class="figureInfo">
-                        <img class="infoImg" src="/img/extensions/{{extension originalname}}.png">
-                        <a class="text-decoration-none" href="/download/{{location}}/{{filename}}">
-                            <img class="downloadInfoImg" src="/img/download.png">
-                        </a>
-                        <figcaption>{{originalname}}</figcaption>
-                    </figure>
-                </div>
-            </div>
-            {{/each}}
+            </main>
         </div>
     </div>
 </div>
